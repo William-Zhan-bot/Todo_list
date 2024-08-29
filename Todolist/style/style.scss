@@ -1,0 +1,202 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*按鈕設定
+設定css屬性當中的event stop
+以維持案到按鈕而不是icons*/
+/*暫停 icons的點擊功能
+以免影響js*/
+i {
+  pointer-events: none;
+}
+
+body {
+  background: linear-gradient(to left, #2bd472 0%, #541ef7 100%);
+  display: flex;
+  flex-direction: column;
+
+  section {
+    display: flex;
+  }
+
+  section.input {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    min-height: 30vh;
+    h2 {
+      text-align: center;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 48px;
+
+      margin-bottom: 5vh;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+
+      input {
+        width: 400px;
+        height: 60px;
+        margin: 0px 2px;
+        font-size: 24px;
+        text-align: center;
+      }
+      input[type="number"] {
+        text-align: center;
+        width: 100px;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      button {
+        margin-left: 2px;
+        background-color: rgba(0, 255, 157, 0.287);
+        border-style: none;
+        color: white;
+        height: 60px;
+        width: 140px;
+      }
+
+      button.add {
+        background-color: #37a4ed8a;
+      }
+    }
+  }
+  // sort按鈕區
+  div.bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    padding-bottom: 15vh;
+    button {
+      margin: 0px 10px;
+      background-color: rgba(0, 255, 157, 0.287);
+      border-style: none;
+      color: white;
+      height: 60px;
+      width: 180px;
+      font-size: 24px;
+
+      cursor: pointer;
+    }
+  }
+
+  section.list {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+    justify-content: top;
+    align-items: center;
+
+    div.bt {
+      height: 60px;
+      min-width: 100vw;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: 2rem 0rem;
+
+      button {
+        height: 40px;
+      }
+    }
+    div.missions {
+      padding: 1rem;
+      text-align: center;
+      color: white;
+    }
+  }
+}
+
+// 任務清單的細項
+section.list {
+  div.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 35vw;
+    height: 60px;
+    margin-bottom: 10px;
+
+    background-color: rgba(245, 245, 245, 0.922);
+    font-size: 28px;
+
+    p.todo-text {
+      text-align: left;
+      padding-left: 1rem;
+      width: 50%;
+    }
+    p.todo-time {
+      text-align: center;
+      width: 20%;
+    }
+
+    button {
+      color: white;
+      font-size: 1.75rem;
+      border: none;
+      width: 60px;
+      height: 60px;
+      margin: 0;
+      padding: 0;
+    }
+    button.complete {
+      background-color: green;
+    }
+    button.trash {
+      background-color: red;
+    }
+  }
+}
+
+button {
+  font-size: 1.25rem;
+}
+
+/*動畫設定
+以函式建構動畫 之後再用js連結
+因為是動畫設定 並不是屬性的轉換
+所以掛在animation下面
+transition用於處理 向hover等情況下
+property的轉換*/
+@keyframes scaleUp {
+  //scale => 代表縮放的比例
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.done {
+  transition: all 0.8s ease;
+  opacity: 0.3;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.15rem;
+}
+/*刪除動畫*/
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
+
+// //定位用
+// div {
+//   border: 2px solid black;
+// }

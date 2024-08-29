@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="作者" content="William Zhan" />
+    <meta name="介紹" content="備忘清單" />
+
+    <!-- font awesome -->
+    <!-- 先用cdnjs的連結 
+    才可以直接用上font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>To do List</title>
+
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <!-- 輸入事件 -->
+    <section class="input">
+      <h2>To do List</h2>
+      <form>
+        <input type="text" required />
+        <input type="number" min="1" max="12" placeholder="M" required />
+        <input type="number" min="1" max="31" placeholder="D" required />
+        <button class="add">Add into List</button>
+      </form>
+    </section>
+    <div class="bt">
+      <button>Sort by time</button>
+    </div>
+    <!-- 清單區 -->
+    <section class="list"></section>
+  </body>
+  <script src="./app.js"></script>
+</html>
